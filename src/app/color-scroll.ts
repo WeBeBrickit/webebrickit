@@ -3,10 +3,10 @@ export class ColorScroll {
     g = Math.floor(Math.random() * 256);
     b = Math.floor(Math.random() * 256);
 
-    public pageScrollHelper(who: HTMLElement, order) {
+    public pageScrollHelper(who: any, order) {
         // fuck it
         who = document.body;
-
+        
         let rgb: any;
         rgb = who.style.backgroundColor;
         if (rgb === '') {
@@ -77,23 +77,78 @@ export class ColorScroll {
             
     }
 
-    // async delay(ms: number) {
-    //     return await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
-    // }
+    public pageScrollHelper2(who: any, order) {
 
-    async pageScroll() {
+        let rgb: any;
+        rgb = who.style.fill;
+        if (rgb === '') {
+            who.style.fill = 'rgb(255, 255, 255)';
+            rgb = who.style.fill;
+        }
+        rgb = rgb.slice(4, rgb.length - 1).split(', ');
+
+        if (order === 0) {
+            rgb[0] = parseInt(rgb[0]);
+            rgb[1] = parseInt(rgb[1]);
+            rgb[2] = parseInt(rgb[2]);
+        } else {
+            const temp = rgb[0];
+            rgb[0] = parseInt(rgb[1]);
+            rgb[1] = parseInt(rgb[2]);
+            rgb[2] = parseInt(temp);
+        }
+
+        if (this.r > rgb[0]){
+            rgb[0] += 1;
+        } else if (this.r < rgb[0]){
+            rgb[0] -= 1;
+        }
+
+        if (this.g > rgb[1]){
+            rgb[1] += 1;
+        }else if (this.g < rgb[1]){
+            rgb[1] -= 1;
+        }
+
+        if (this.b > rgb[2]){
+            rgb[2] += 1;
+        }else if (this.b < rgb[2]){
+            rgb[2] -= 1;
+        }
+
+        if (this.r == rgb[0]){
+            this.r = Math.floor(Math.random() * 256);
+        }
+        if (this.g == rgb[1]){
+            this.g = Math.floor(Math.random() * 256);
+        }
+        if (this.b == rgb[2]){
+            this.b = Math.floor(Math.random() * 256);
+        }
+
+        if (order == 0){
+            who.style.fill = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+        }else{
+            who.style.fill = 'rgb(' + rgb[2] + ',' + rgb[0] + ',' + rgb[1] + ')';
+        }
+            
+    }
+
+    async pageScroll(tagName:string) {
         //window.scrollBy(0,1);
-
-        let all = document.getElementsByTagName("div");
         
+        let all = document.getElementsByTagName(tagName);
+
         for (var i = 0; i < 1; i++){
             let me = this;
-            me.pageScrollHelper(all[i], 0);
+            if (tagName == "svg"){
+                me.pageScrollHelper2(all[i], 0);
+            }else{
+                me.pageScrollHelper(all[i], 0);
+            }
         }
-        // this.delay(3000);
-        setTimeout(()=>{this.pageScroll();}, 50);
+
+        setTimeout(()=>{this.pageScroll(tagName);}, 50);
         
-        
-    
     }
 }

@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { YoutubeService } from './youtube.service';
 import { WebeVideoComponent } from './webe-video/webe-video.component';
+import { SouthpawLogoComponent } from './southpaw-logo/southpaw-logo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WebeVideoComponent
+    WebeVideoComponent,
+    SouthpawLogoComponent
   ],
   imports: [
     BrowserModule

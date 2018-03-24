@@ -10,10 +10,10 @@ export class AppComponent {
   
   title = 'WeBeBrickit';
   colorScroll = new ColorScroll;
-  
+  colorScroll2 = new ColorScroll;
 
   ngOnInit() {
-    this.colorScroll.pageScroll();
-    
+    this.colorScroll.pageScroll("div");
+    this.colorScroll2.pageScroll("svg");
   }
 }
