@@ -20,13 +20,13 @@
   }
 
   @keyframes ufo-building-float {
-    0%   {transform: translateY(0)}
-    25%  {transform: translateY(-10px)}
-    75%  {transform: translateY(10px)}
+    0%   {transform: translateY(0px)}
+    25%  {transform: translateY(10px)}
+    75%  {transform: translateY(-10px)}
     100% {transform: translateY(0)}
   }
 
   .ufo-building-float {
-    animation: ufo-building-float 5s cubic-bezier(.07,.33,.45,.87) infinite;
+    animation: ufo-building-float 5s cubic-bezier(.33,0,.66,1) infinite;
   }
   
