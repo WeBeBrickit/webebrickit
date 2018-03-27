@@ -17,9 +17,9 @@ export class CssColor {
     }
 
     setColor(redVal:number, greenVal:number, blueVal:number):string {
-        this.redVal = redVal;
-        this.greenVal = greenVal;
-        this.blueVal = blueVal;
+        this.setRed(redVal);
+        this.setGreen(greenVal);
+        this.setBlue(blueVal);
         this.setColorStr();
         return this.colorStr;
     }
@@ -29,11 +29,11 @@ export class CssColor {
     }
 
     setColorWithStr(colorStr:string){
-        let rgb:any = colorStr.slice(4, colorStr.length - 1).split(', ');
+        let rgb:any = colorStr.slice(4, colorStr.length - 1).split(',');
 
-        this.redVal = parseInt(rgb[0]);
-        this.greenVal = parseInt(rgb[1]);
-        this.blueVal = parseInt(rgb[2]);
+        this.redVal = parseInt(rgb[0].trim());
+        this.greenVal = parseInt(rgb[1].trim());
+        this.blueVal = parseInt(rgb[2].trim());
         this.colorStr = colorStr;
     }
 

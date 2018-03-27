@@ -6,15 +6,13 @@ import { AppComponent } from './app.component';
 import { YoutubeService } from './youtube.service';
 import { WebeVideoComponent } from './webe-video/webe-video.component';
 import { SouthpawLogoComponent } from './southpaw-logo/southpaw-logo.component';
-import { CssColor } from './css-color';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WebeVideoComponent,
-    SouthpawLogoComponent,
-    CssColor
+    SouthpawLogoComponent
   ],
   imports: [
     BrowserModule

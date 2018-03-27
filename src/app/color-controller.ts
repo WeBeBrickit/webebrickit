@@ -8,9 +8,11 @@ export class ColorController {
         // fuck it
         let rgb: any;
         rgb = cssColor;
-        let r = rgb.getRed();
-        let g = rgb.getGreen();
-        let b = rgb.getBlue();
+        
+        let r:number = rgb.getRed();
+        let g:number = rgb.getGreen();
+        let b:number = rgb.getBlue();
+
 
         if (this.r > r){
             r += 1;
@@ -30,6 +32,7 @@ export class ColorController {
             b -= 1;
         }
 
+
         if (this.r == r){
             this.r = Math.floor(Math.random() * 256);
         }
@@ -40,6 +43,6 @@ export class ColorController {
             this.b = Math.floor(Math.random() * 256);
         }
 
-        return 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';    
+        return 'rgb(' + r + ',' + g + ',' + b + ')';    
     }
 }

@@ -25,10 +25,26 @@ export class AppComponent {
   }
 
   async timeControl() {
+    // console.log('timeControl start');
+    // console.log(this.bgColor.getRed());
+    // console.log(this.bgColor.getGreen());
+    // console.log(this.bgColor.getBlue());
     this.bgColor.setColorWithStr(this.cc1.randomRotate(this.bgColor));
     this.logoColor.setColorWithStr(this.cc2.randomRotate(this.logoColor));
-    document.body.style.backgroundColor = this.bgColor.colorStr;
-    document.getElementsByTagName('svg')[0].style.fill = this.logoColor.colorStr;
+    // console.log(this.bgColor.getRed());
+    // console.log(this.bgColor.getGreen());
+    // console.log(this.bgColor.getBlue());
+    let who:any = document.body;
+    let stuff:string = this.bgColor.getColorStr();
+    // console.log(stuff);
+    who.style.backgroundColor = stuff;
+    // console.log(who.style.backgroundColor);
+    who = document.getElementsByTagName('svg');
+    who[0].style.fill = this.logoColor.getColorStr();
+    // console.log('timeControl end');
+    // console.log(this.bgColor.getRed());
+    // console.log(this.bgColor.getGreen());
+    // console.log(this.bgColor.getBlue());
     setTimeout(()=>{this.timeControl();}, this.msRefresh);
     
   }
