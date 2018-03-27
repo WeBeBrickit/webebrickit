@@ -28,6 +28,15 @@ export class CssColor {
         this.colorStr = 'rgb('+ this.redVal +', '+ this.greenVal +', '+ this.blueVal +')';
     }
 
+    setColorWithStr(colorStr:string){
+        let rgb:any = colorStr.slice(4, colorStr.length - 1).split(', ');
+
+        this.redVal = parseInt(rgb[0]);
+        this.greenVal = parseInt(rgb[1]);
+        this.blueVal = parseInt(rgb[2]);
+        this.colorStr = colorStr;
+    }
+
     getColorStr():string {
         return this.colorStr;
     }
