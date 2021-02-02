@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'webebrickit2'`, () => {
+  it(`should have as title 'webebrickit'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('webebrickit2');
+    expect(app.title).toEqual('webebrickit');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('webebrickit2 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('webebrickit app is running!');
   });
 });

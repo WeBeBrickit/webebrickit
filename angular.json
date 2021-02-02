@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "webebrickit2": {
+    "webebrickit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/webebrickit2",
+            "outputPath": "dist/webebrickit",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "webebrickit2:build"
+            "browserTarget": "webebrickit:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "webebrickit2:build:production"
+              "browserTarget": "webebrickit:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "webebrickit2:build"
+            "browserTarget": "webebrickit:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "webebrickit2:serve"
+            "devServerTarget": "webebrickit:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "webebrickit2:serve:production"
+              "devServerTarget": "webebrickit:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "webebrickit2"
+  "defaultProject": "webebrickit"
 }
