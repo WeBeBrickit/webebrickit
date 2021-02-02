@@ -1,19 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ColorScroll } from './color-scroll';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  title = 'WeBeBrickit';
-  colorScroll = new ColorScroll;
-  
-
-  ngOnInit() {
-    this.colorScroll.pageScroll();
-    
-  }
+  title = 'webebrickit2';
 }
