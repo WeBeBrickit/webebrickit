@@ -7,7 +7,7 @@ export const BLOGPOSTS: BlogPost[] = [
         date: new Date('2020-02-04T02:49:00'),
         body: "I'm using the Angular CLI to generate components and scaffolding quicker.\nOrganization is not my strong suit, but at least a clean slate means I can use best practices (for now).\n\n" +
         "I'll also be using Angular Material where convinient.\n\nYou'll notice I've added my snazzy little logo to the top of the page.\n" +
-        "I'm left handed and have always liked the \"southpaw\" moniker.\nThis logo is simple, and well balanced. Strong shapes.\n\n" +
+        "I'm left handed and have always liked the \"southpaw\" moniker.\nThis logo is simple and well balanced. Strong shapes.\n\n" +
         "It also represents my initials.\nThe three dots translate to \"S\" in morse code and the triangle is a delta for \"D\"\n\n" +
         "...yeah, I know it's a stretch."
     },
